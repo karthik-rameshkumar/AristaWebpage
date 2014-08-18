@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+
+<head>
+<style>
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 900px;
+	position: relative;
+	margin: 10% auto;
+	padding: 1px ;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+.btn {
+  background: #539ac9;
+  background-image: -webkit-linear-gradient(top, #539ac9, #2980b9);
+  background-image: -moz-linear-gradient(top, #539ac9, #2980b9);
+  background-image: -ms-linear-gradient(top, #539ac9, #2980b9);
+  background-image: -o-linear-gradient(top, #539ac9, #2980b9);
+  background-image: linear-gradient(to bottom, #539ac9, #2980b9);
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: Arial;
+  color: #fcf9fc;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #4eb9fc;
+  background-image: -webkit-linear-gradient(top, #4eb9fc, #3498db);
+  background-image: -moz-linear-gradient(top, #4eb9fc, #3498db);
+  background-image: -ms-linear-gradient(top, #4eb9fc, #3498db);
+  background-image: -o-linear-gradient(top, #4eb9fc, #3498db);
+  background-image: linear-gradient(to bottom, #4eb9fc, #3498db);
+  text-decoration: none;
+}
+
+</style>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="">
+
+<title>Arista</title>
+
+<!-- Google Fonts -->
+<link href='../../../fonts.googleapis.com/css_B7B91E91' rel='stylesheet' type='text/css'>
+
+<!-- Typekit -->
+<script type="text/javascript" src="../../../use.typekit.net/huo1aup.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css" />
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="assets/css/animate/animate.css">
+<link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+<!-- Modernizr v2.7.1 -->
+<script type="text/javascript" src="assets/js/modernizr-2.7.1.min.js"></script>
+
+</head>
+
+<body>
+
+		
+
+        <!-- // End Header -->
+
+        <!-- Begin Home -->
+        <section id="home" class="page-type black-bg font-white depth-type animated delayed no-opacity" data-animation="fadeIn" data-animation-delay="0s">
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-md-12 text-center">
+
+        				<!-- logo -->
+        				<div class="big-logo animated delayed no-opacity" data-animation="fadeInDown" data-animation-delay="0.4s"><a href="index.htm"><img src="demo/big-logo.png" alt="" /></a><br><h2>EVENTS</h2></div>
+
+        				<!-- portfolio filter -->
+        				<div id="diamond-filter-home" class="diamond-filter font-white animated delayed no-opacity" data-animation="fadeInUp" data-animation-delay="0.7s">
+        					<ul class="special-font">
+        						<li class="active"><a data-filter="*" href="#">All</a></li>
+        						<li><a data-filter="webdesign" href="#">Technical</a></li>
+        						<li><a data-filter="illustration" href="#">Non-Technical</a></li>
+        						<li><a data-filter="icons" href="#">Cultural</a></li>
+        					</ul>
+        				</div>
+
+        				<!-- portfolio slider -->
+        				<div id="diamondslider-home" class="diamondslider nav-white animated delayed no-opacity" data-animation="fadeInUp" data-animation-delay="1.1s">
+        					<ul class="slides">
+        						<li class="shape diamond small" data-category="webdesign">
+        							<a class="item-hover ajax-nav" href="#BigIdea"><span class="hover-title special-font">Next Big Idea</span><span class="hover-action">- Rules -</span></a>        							<img src="demo/portfolio-thumbs/1.jpg" alt="" />
+                                    
+
+        						</li>
+
+        						<li class="shape diamond small" data-category="webdesign">
+        							<a class="item-hover ajax-nav" href="#PaperPresentation"><span class="hover-title special-font">Paper Presentation</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/2.jpg" alt="" />
+       						  </li>
+        						<li class="shape diamond small" data-category="illustration">
+        							<a class="item-hover ajax-nav" href="#Multimedia"><span class="hover-title special-font">Multimedia</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/3.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="webdesign">
+        							<a class="item-hover ajax-nav" href="#Apps4Good"><span class="hover-title special-font">Apps4Good</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/4.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="webdesign">
+        							<a class="item-hover ajax-nav" href="#Website4U"><span class="hover-title special-font">Website 4 u</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/5.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="webdesign">
+        							<a class="item-hover ajax-nav" href="#Quiz"><span class="hover-title special-font">Quiz</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/6.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="icons">
+        							<a class="item-hover ajax-nav" href="#Cultural">><span class="hover-title special-font">Cultural Fest</span><span class="hover-action">- Rules-</span></a>
+        							<img src="demo/portfolio-thumbs/7.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="webdesign">
+        							<a class="item-hover ajax-nav" href="#BugHunt"><span class="hover-title special-font">Bug Hunt</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/8.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="illustration">
+        							<a class="item-hover ajax-nav" href="#TakeAPic"><span class="hover-title special-font">Take a pic</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/9.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="illustration">
+        							<a class="item-hover ajax-nav" href="#Gaming"><span class="hover-title special-font">Gaming</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/10.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="illustration">
+        							<a class="item-hover ajax-nav" href="#ShortFilm"><span class="hover-title special-font">Short Film</span><span class="hover-action">- Rules -</span></a>
+        							<img src="demo/portfolio-thumbs/11.jpg" alt="" />
+        						</li>
+        						<li class="shape diamond small" data-category="webdesign">
+        							<a class="item-hover ajax-nav" href="#OnlineEvents"><span class="hover-title special-font">Online Events</span><span class="hover-action"></span></a>
+        							<img src="demo/portfolio-thumbs/12.jpg" alt="" />
+        						</li>
+        						
+       					  </ul>
+        				</div>
+
+        			</div>
+        		</div>
+        	</div>
+
+            <!-- Background Triangle Overlay / Special Depth Bg -->
+            <div class="depth-bg">
+
+            	<!-- Background Image Slider -->
+                <div class="owl-carousel depth-slider">
+                    <div><img src="demo/header/homepage-bg1.jpg" alt="" /></div>
+                    <div><img src="demo/header/homepage-bg2.jpg" alt="" /></div>
+                    <div><img src="demo/header/homepage-bg3.jpg" alt="" /></div>
+                    <div><img src="demo/header/homepage-bg4.jpg" alt="" /></div>
+                </div>
+                <!-- // end Background Image Slider -->
+
+                <!-- Background Texture for Depth Bg -->
+            	<div class="depth-texture"></div>
+
+            	<!-- Background Overlay Image (e.g. a transparant triangle) -->
+            	<div class="depth-bg-img" style="background-image: url(demo/bg/home-bg.png);"></div>
+
+            </div>
+            <!-- // End Background Triangle Overlay / Special Depth Bg -->
+
+        </section>
+        <!-- // End Home -->
+
+       
+        
+		<!-- jQuery and Bootstrap -->
+<script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        
+		<!-- jQuery Plugins -->
+<script type="text/javascript" src="assets/js/plugins/jquery.easing.js"></script>
+<script type="text/javascript" src="assets/js/plugins/imagesloaded.js"></script>
+<script type="text/javascript" src="assets/js/plugins/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/owl.carousel.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/jquery.diamondslider.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/jquery.grafixesTabs.js"></script>
+<script type="text/javascript" src="assets/js/plugins/jquery.parallax.js"></script>
+<script type="text/javascript" src="assets/js/plugins/jquery.fitvids.js"></script>
+<script type="text/javascript" src="assets/js/plugins/jquery.appear.js"></script>
+<script type="text/javascript" src="assets/js/plugins/jquery.tweet.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/jquery.scripts.js"></script>
+<script type="text/javascript" src="assets/js/contact-form.js"></script>
+
+        <!-- jQuery Custom -->
+<script type="text/javascript" src="assets/js/vinto.js"></script>
+<script>
+$(document).ready(function() {
+
+	$('.simple-ajax-popup-align-top').magnificPopup({
+		type: 'ajax',
+		alignTop: true,
+		overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
+	});
+
+	$('.simple-ajax-popup').magnificPopup({
+		type: 'ajax'
+	});
+	
+});
+</script>
+
+<script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-43411740-1', 'themeshifters.com');
+          ga('send', 'pageview');
+        
+        </script>
+        <div id="BigIdea" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<center><h2>The Next Big Idea!</h2></Center>
+		1.Participants from all the domains are invited to present their most innovative ideas<br>
+2.Preference will be given to the projects displayed for the first time.<br>
+3.Projects with prototype and working model will carry more weightage.<br>
+4.Presentation including demonstration regarding the project needs to be done by the participants within 15 minutes.<br>
+5.Finalists will be judged by panel members.<br>
+6.Send your executive summary and presentation to ‘arista14.bigidea@gmail.com’.<br>
+7.After you receive the acknowledgement, make a Demand Draft(DD) in the name of ‘KGiSL Institute Of Technology’ and send the DD number to ‘arista14.bigidea@gmail.com’.<br>
+8.After you mail the DD number, send the DD via post to the following address:<br>
+
+<center><b>KGiSL Institute of Technology,
+Dept. of Information Technology,<br>
+KGiSL Campus, Thudiyalur road,
+Saravanampatty,<br>
+Coimbatore-641035.</b></center><br>
+
+9. Both individual and team participation is allowed.
+10.Single online registration per team will do.
+11.Participants should bring their own software and hardware kits that will be needed for their project demonstration.
+
+		
+		
+		<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--papre presentation-->
+    <div id="PaperPresentation" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<center><h2>PAPER PRESENTATION</h2></center><br>
+1.	Participation is open to all students and team should have minimum of two authors.<br>
+2.	Papers downloaded from internet or plagiarised will be disqualified.<br>
+3.	Papers should strictly follow IEEE format, not more than six pages.<br>
+4.	Papers must contain names of all authors, email id and contact number.<br>
+5.	Papers must reach us on or before September 6, 2014.<br>
+6.	Selection intimation will be sent on or before September 8, 2014.<br>
+7.	Presentation time is 7 minutes (5+2).<br>
+8.	Send your paper to papers@arista14.com.<br> <p>
+Topic:RECENT TRENDS IN IT<br>
+
+a)	Multimedia computing.&nbsp;&nbsp;&nbsp;
+b)	Green computing.&nbsp;&nbsp;&nbsp;
+c)	Mobile computing.<br>
+d)	Cybercrimes and controlling.&nbsp;&nbsp;&nbsp;
+e)	Nano robotics.&nbsp;&nbsp;&nbsp;
+f)	Gifi, Lifi, Wi-Fi-security.<br>
+g)	Image processing.&nbsp;&nbsp;&nbsp;
+h)	Network security.<br>
+
+
+		<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--papre presentation-->
+<!--Multimedia-->
+    <div id="Multimedia" class="modalDialog">
+    
+	<div><a href="#close" title="Close" class="close">X</a>
+	 <center> <h2>MULTIMEDIA RULES</h2></center>
+
+
+      1. The presentation can be on any theme.         <br>
+       2. The contestants can register only in a group (Maximum 2 nos).<br>
+       3. Everyone should have their respective College Id Card on person.<br>
+       4. Each presentation should be a maximum of 8 minutes.<br>
+       5. The competition is open to all departments.<br>
+       6. All the participants present during the event will be awarded Participation Certificate.        <br>
+      7. Candidates are entitled to present their presentation during the event.<br>
+       8. Participant should bring their presentation in an USB Drive.<br>
+      9. The presentation will be sought from participants during the event.<br>
+       10.Presentation can be prepared using any multimedia software.        <br>
+      
+        <p><center><a href="#btn" class="btn">Register</a></center></p>
+	</div>
+    
+</div>
+<!--Multimedia-->
+
+<!--gaming-->
+       <div id="Gaming" class="modalDialog">
+<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h2>Gaming</h2><p>
+If any participants are found using cheat codes, they will be disqualified immediately.<br>
+Individual participation only.<br>
+The decision made by the co-ordinator is final.<br>
+Participants can bring joysticks (optional).
+Registration fees Rs.100.<br></p>
+<h2>ROUNDS IN GAMING:</h2><p>
+There are 3 different rounds in the gaming event.<br>
+Round 1: Be an Aggressive Competitor!<br>
+Round 2: Be the Survivor!<br>
+Round 3: Be the Champion!<br></p>
+
+<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--gaming-->
+<!--quiz-->
+ <div id="Quiz" class="modalDialog">
+<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<center><h2>Quiz Rules</h2></center><br>
+1.Each team can have a maximum of two members.<br>
+3.The eliminatory round will have 25 questions(not MCQ).<br>
+4.It will be conducted for 30 minutes and there is no negative points.<br>
+5.Three teams will be selected for the finals.<br>
+6.In the finals each team has to compete with the other 2 teams in 3 rounds.<br>
+8.The decisions of the judges will be final.<br>
+<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--quiz-->
+<!--culturals-->
+ <div id="Cultural" class="modalDialog">
+<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<center><h2>Cultural Rules</h2></center><br>
+1.A team can consist of Male/female or both.<br>
+2.Minimum of five members per team.<br>
+3.Any style can be adopted.<br>
+4.Timing should not exceed six minutes.<br>
+5.Usuage of flame/water is prohibited.<br>
+6.Participants of group dance can also give solo performance.<br>
+7.Songs must be in CD /USB Disk(.mp3).<br>
+8.Judge's decision will be the final and binding.<br>
+9.Participants are requested to abide by the rules framed by the management, if not the team will be disqualified.<br>
+REGISTRATION FEE: <b>Solo & B-Boy battle:</b>Rs.100 per head &nbsp&nbsp&nbsp <b>Group:</b>Rs.100 per head<br>
+Total cash price worth Rs.35000/-<br>
+<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--culturals-->
+<!--short film-->
+ <div id="ShortFilm" class="modalDialog">
+<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<center><h2>Short film Rules</h2></center><br>
+		
+								
+1.Participants should submit their short film through Pen-drive or DVD.<br>
+2.Total running time must be around 15 to 20 minutes in length, including front and back credits.<br>
+3.Short movies should not be more than two years old.<br>
+4.Two persons should be present at the time of presentation, wherein at least one of the characters enacted in the film must be present.<br>
+
+	<center><b>"Special Awards will be given on the spot depending on the performance"</b></center><br>
+<center><b>NOTE:</b> If the film is found to be downloaded from internet or any other sources the pertained person will be strictly disqualified.</center><br>
+
+<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--short film-->
+<!--take a pic-->
+ <div id="TakeAPic" class="modalDialog">
+<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<center><h2>Take A Picture Rules</h2></center><br>
+		<b>Prelims:</b><br>
+ &nbsp;&nbsp;&nbsp; Take any photo of your choice and it will be short-listed for the final by the jury’s decision.<br>
+<b>Final:</b></br>
+&nbsp;&nbsp;&nbsp;Within two hours the selected Participants should take a photo for the theme “ Best Pic of our Campus ” and as per the jury’s decision the winner and runner are announced on the stage during price distribution. <br>
+<b>Rules:</b><br>
+1.	Photo should not be downloaded on any Internet sources.<br>
+2.	Edited photos are not allowed.<br>
+3.	Adult content themes are not permitted.<br>
+4.	Jury’s decision is final. <br>
+<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--take a pic-->
+<!--website for u-->
+<div id="Website4U" class="modalDialog">
+<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<center><h2>Website for you Rules</h2></center><br>
+		
+		1. A single candidate or a team of two can participate in this event<br>
+2. Your college ID card is mandatory.<br>
+3.The website must be designed on the topic “CAREER HUB”(website that helps placements in such a way that registered users will be notified [mailed/messaged] according to their relevant skills (automated search) required by the recruiters, include mock tests and  make effective add-ons to your site) and only to be presented in the Event(Power Point Presentation).<br>
+4. Registration Rs.250/- per head. Spot registration is also available<br>
+5. All the participants will be awarded a Participation Certificate<br>
+6. The website developed must be original. Editing the already existing website is strictly prohibited.<br>
+7. It should be responsive<br>
+8.Web-page, layout design & labelling should be consistent throughout the site.<br>
+
+<b>NOTE:</b>
+
+*The candidate must have a personal website for them
+
+		
+<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--website for u-->
+<!--Bug hunt-->
+<div id="BugHunt" class="modalDialog">
+<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<center><h2>Bug Hunt</h2></center><br>
+		  <b>ROUND 1:</b><br>
+1.	30 MCQ questions will be put forth in various programming fields.<br>
+2.	The students will be selected to the Second Round based on their scores.<br>
+Time Duration: 30 minutes.<br>
+ <b> ROUND 2:</b><br>
+3.	Three program questions will be given.<br>
+4.	Participants who run the program efficiently will be selected to the 3rd round.<br>
+Time Duration : 30 minutes<br>
+Platform: C<br>
+ <b>ROUND 3:</b><br>
+5.	Three programs will be provided with errors.<br>
+6.	Participants should debug and run the program efficiently. Prizes will be awarded based on a first-come, first-serve basis.<br>
+Time Duration: 20 minutes<br>
+
+		
+
+		
+<p><center><a href="#btn" class="btn">Register</a></center></p>	
+</div>
+</div>
+<!--Bug hunt-->
+</body>
+</html>
